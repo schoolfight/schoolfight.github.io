@@ -210,6 +210,8 @@ optimal performance.</p>
                 event.preventDefault();
                 if(!hasClicked) hasClicked = true;
                 donk.hidden = true;
+                video.play();
+                videoClick();
             }
             acceptButton.addEventListener("click", buttonClick);
             declineButton.addEventListener("click", buttonClick);
