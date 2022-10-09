@@ -206,16 +206,14 @@ optimal performance.</p>
                 else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
             }
-
+            function buttonClick(event) {
+                event.preventDefault();
+                if(!hasClicked) hasClicked = true;
+                donk.hidden = true;
+            }
             acceptButton.addEventListener("click", buttonClick);
             declineButton.addEventListener("click", buttonClick);
             video.addEventListener("click", videoClick);
-        </script>
-<script type="text/javascript">
-            function hideImage() {
-                var remove = document.getElementById("donk");
-                remove.removeChild(removeChildNodes[0]);
-            }
         </script>
 </body>
 </html>
