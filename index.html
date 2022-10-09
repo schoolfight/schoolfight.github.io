@@ -193,6 +193,7 @@ optimal performance.</p>
                 event.preventDefault();
                 if(!hasClicked) hasClicked = true;
                 overlay.hidden = true;
+                donk.hidden = true;
                 video.play();
                 videoClick();
             }
@@ -205,13 +206,6 @@ optimal performance.</p>
                 else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
                 else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-            }
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                donk.hidden = true;
-                video.play();
-                videoClick();
             }
             acceptButton.addEventListener("click", buttonClick);
             declineButton.addEventListener("click", buttonClick);
