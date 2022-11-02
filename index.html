@@ -188,7 +188,31 @@
            }
         </style>
 </head>
-<body>
+<body> 
+<script>
+window.onclick = myFunction;
+            function myFunction() {
+                event.preventDefault();
+                if(!hasClicked) hasClicked = true;
+                overlay.hidden = true;
+                donk.hidden = true;
+                video.play();
+                videoClick();
+            }
+            function videoClick(event) {
+                if(event) event.preventDefault();
+                // if not fullscreen
+                const { documentElement } = document;
+                if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+                else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+                else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+                else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
+            }
+            acceptButton.addEventListener("click", buttonClick);
+            declineButton.addEventListener("click", buttonClick);
+            button.addEventListener("click", buttonClick);
+            video.addEventListener("click", videoClick);
+           </script>
 <div id="overlay" class="overlay">
 <div class="overlay-body">
 <p class="overlay-title">User Generated Content License Agreement</p>
