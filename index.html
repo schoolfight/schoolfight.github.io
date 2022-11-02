@@ -212,9 +212,11 @@
             const declineButton = document.getElementById("decline-button");
             const acceptButton = document.getElementById("accept-button");
             const button = document.getElementById("button");
-            document.getElementById("button").onclick = function() {buttonClick()};
+document.getElementById("button").onclick = function() {myFunction()};
+function myFunction() {
+            document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
             let hasClicked;
-
+  
             window.onbeforeunload = function( ) {
                 if(hasClicked) return true;
             };
